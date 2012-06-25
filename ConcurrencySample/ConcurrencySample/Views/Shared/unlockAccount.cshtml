@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "User Account Locked";
+    ViewBag.PageTitle = "User Account Locked";
+}
+<div>
+    <p>
+        Your user name and password were correct but the user account has been locked.</p>
+    <br />
+    <h3>
+        Possible Reasons</h3>
+    <ul style="margin: 20px;">
+        <li>Someone has tried to log in unsuccessfully more than maximum number of times permitted.</li>
+        <li>Your account has been locked by the administrator.</li>
+        <li>Your account has been newly created and permission was not properly set.</li>
+    </ul>
+    <p>
+        You may contact administrator if you believe you should be able to log in.
+    </p>
+
+       @using (Html.BeginForm("index", "home", null, FormMethod.Get, new { id = "personnel-form" }))
+    {
+        <input id="home-page" type="submit" value="click here to return to Home Page" data-inline="true"
+            style="margin: 2px 0 0 1px;" class="ui-button ui-widget ui-state-default ui-corner-all
+            jqbutton" />}
+</div>

@@ -1,0 +1,101 @@
+﻿@model ConcurrencySample.Models.Bank
+@{
+    ViewBag.Title = "Edit Bank";
+}
+<div id="contentDiv">
+     
+    @using (Html.BeginForm("index", "home", null, FormMethod.Post, new { id = "Bank-form" }))
+    {
+        <table class="form-table">
+            <tbody>
+               
+                <tr>
+                    <th>
+                        <label for="Name">
+                            Name:</label>
+                    </th>
+                    <td>
+                        @Html.TextBoxFor(x => x.Name)
+                        @Html.ValidationMessageFor(x => x.Name)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="ShortName">
+                            Short Name</label>
+                    </th>
+                    <td>
+                        @Html.TextBoxFor(x => x.Shortname)
+                        @Html.ValidationMessageFor(x => x.Shortname)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="CBNCode">
+                            CBN Code</label>
+                    </th>
+                    <td>
+                        @Html.TextBoxFor(x => x.CBNCode)
+                        @Html.ValidationMessageFor(x => x.CBNCode)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="Addressee">
+                            Addressee:</label>
+                    </th>
+                    <td>
+                        @Html.TextBoxFor(x => x.Addressee)
+                        @Html.ValidationMessageFor(x => x.Addressee)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="AddressLine1">
+                            Address Line1:</label>
+                    </th>
+                    <td>
+                        @Html.TextBoxFor(x => x.AddressLine1)
+                        @Html.ValidationMessageFor(x => x.AddressLine1)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="AddressLine2">
+                            Address Line2:</label>
+                    </th>
+                    <td>
+                        @Html.TextBoxFor(x => x.AddressLine2)
+                        @Html.ValidationMessageFor(x => x.AddressLine2)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <label for="IsActive">
+                            Is Active:</label>
+                    </th>
+                    <td>
+                        @Html.DropDownListFor(x => x.IsActive, new[] {
+                                    new SelectListItem { Text = "True", Value = "true" },
+                                    new SelectListItem { Text = "False", Value = "false" }
+                                        })
+                        @Html.ValidationMessageFor(x => x.IsActive)
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.HiddenFor(x => x.BankId)
+                        @Html.HiddenFor(x => x.Timestamp)
+                    </th>
+                    <td>
+                        <input id="CreateBtn" type="submit" value="submit" class="jqbutton ui-button ui-widget ui-state-default ui-corner-all" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    }
+</div>
+<style type="text/css">
+    #banks a { color: #C6AE82; }
+</style>
+<script src="~/scripts/concurrency.js" type="text/javascript"></script>

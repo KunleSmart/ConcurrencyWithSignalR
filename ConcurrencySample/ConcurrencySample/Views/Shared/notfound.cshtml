@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Page Not Found";
+    ViewBag.PageTitle = "Page Not Found";
+}
+<div>
+    <p>
+        We are sorry the page requested does not exist or has been moved.</p>
+    <br />
+    <h3>
+        Possible Reasons</h3>
+    <ul style="margin:20px;">
+        <li>The action requested is an update action that has taken place in the past and is
+            not permitted to re-occur.</li>
+        <li>The action is a request of an item that does not exist or has been deleted.</li>
+        <li>The page existed but was later updated and thus bear another name.</li>
+        <li>The page never existed.</li>
+    </ul>
+    <p>
+        You may change the address manually or
+    </p>
+    @using (Html.BeginForm("index", "home", null, FormMethod.Get, new { id = "personnel-form" }))
+    {
+        <input id="home-page" type="submit" value="click here to return to Home Page" data-inline="true"
+            style="margin: 2px 0 0 1px;" class="ui-button ui-widget ui-state-default ui-corner-all
+            jqbutton" />}
+</div>
